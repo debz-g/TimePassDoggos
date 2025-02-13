@@ -3,6 +3,6 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.androidx.navigation.safeargs) apply false
-    alias(libs.plugins.devtools.ksp) apply false
     alias(libs.plugins.hiltAndroid) apply false
+    alias(libs.plugins.org.jetbrains.kotlin.kapt) apply false
 }

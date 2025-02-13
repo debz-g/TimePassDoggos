@@ -71,8 +71,10 @@ class LruCache<K, V>(
         val valuesJson = sharedPreferences.getString("cache_values", null)
 
         if (keysJson != null && valuesJson != null) {
-            val keyList: List<K> = gson.fromJson(keysJson, object : TypeToken<List<K>>() {}.type)
-            val valueList: List<V> = gson.fromJson(valuesJson, object : TypeToken<List<V>>() {}.type)
+            val tokenKeyType = object : TypeToken<List<K>>() {}.type
+            val tokenValueType = object : TypeToken<List<V>>() {}.type
+            val keyList: List<K> = gson.fromJson(keysJson, tokenKeyType)
+            val valueList: List<V> = gson.fromJson(valuesJson, tokenValueType)
 
             keyList.zip(valueList).forEach { (key, value) ->
                 if (value is String) {

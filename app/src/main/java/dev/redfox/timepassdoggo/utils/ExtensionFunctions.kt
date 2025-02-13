@@ -20,11 +20,11 @@ class ExtensionFunctions(
     }
 }
 
-fun View.setSafeOnClickListener(onSafeClick: (View) -> Unit) {
-    val safeClickListener = ExtensionFunctions {
+fun View.setOnSingleClickListener(onSafeClick: (View) -> Unit) {
+    val singleClickListener = ExtensionFunctions {
         onSafeClick(it)
     }
-    setOnClickListener(safeClickListener)
+    setOnClickListener(singleClickListener)
 }
 
 fun View.show() {

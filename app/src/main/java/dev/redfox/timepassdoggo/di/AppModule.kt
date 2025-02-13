@@ -2,13 +2,12 @@ package dev.redfox.timepassdoggo.di
 
 import android.content.Context
 import android.graphics.Bitmap
-import com.facebook.shimmer.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.redfox.MyApplication
+import dev.redfox.timepassdoggo.TimePassDoggoApplication
 import dev.redfox.timepassdoggo.network.ServerInterface
 import dev.redfox.timepassdoggo.offline.LruCache
 import okhttp3.OkHttpClient
@@ -23,8 +22,8 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun providesApplication(@ApplicationContext context: Context): MyApplication =
-        (context as MyApplication)
+    fun providesApplication(@ApplicationContext context: Context): TimePassDoggoApplication =
+        (context as TimePassDoggoApplication)
 
     @Provides
     @Singleton
@@ -38,11 +37,6 @@ object AppModule {
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
-            .also {
-                if (BuildConfig.DEBUG) {
-                    it.addInterceptor(loggingInterceptor)
-                }
-            }
             .build()
 
     @Provides

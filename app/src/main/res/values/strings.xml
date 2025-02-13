@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TimePassDoggo</string>
+    <string name="generate">Generate</string>
+    <string name="clear_dogs">Clear Dogs</string>
+    <string name="no_dogs_found_please_generate">No Dogs Found, Please Generate</string>
+    <string name="generate_dogs">Generate Dogs</string>
+    <string name="recently_generated_dogs">Recently Generated Dogs</string>
+    <string name="random_dog_generator">Random Dog Generator!</string>
 </resources>

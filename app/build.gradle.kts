@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.serialization)
     alias(libs.plugins.androidx.navigation.safeargs)
-    alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 android {
@@ -60,8 +60,6 @@ dependencies {
     //Gson Converter
     implementation(libs.gson)
     implementation(libs.gson.convertor)
-    //Paging3
-    implementation(libs.androidx.paging.runtime.ktx)
     //Glide
     implementation(libs.glide)
     //Coroutines
@@ -84,16 +82,10 @@ dependencies {
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation(libs.kotlinx.serialization.json)
-    //Shimmer
-    implementation(libs.shimmer)
-    //Room DB
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.paging)
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
-    //Hilt
+    // Dagger - Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.hilt.compiler)
 }
 
 buildscript {

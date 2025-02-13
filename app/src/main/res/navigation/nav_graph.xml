@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dogsFragment">
 
+    <fragment
+        android:id="@+id/dogsFragment"
+        android:name="dev.redfox.timepassdoggo.ui.home.fragment.DogsFragment"
+        android:label="DogsFragment" >
+        <action
+            android:id="@+id/action_dogsFragment_to_generateDogsFragment"
+            app:destination="@id/generateDogsFragment" />
+        <action
+            android:id="@+id/action_dogsFragment_to_recentDogsFragment"
+            app:destination="@id/recentDogsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateDogsFragment"
+        android:name="dev.redfox.timepassdoggo.ui.generateDogs.fragment.GenerateDogsFragment"
+        android:label="GenerateDogsFragment" />
+    <fragment
+        android:id="@+id/recentDogsFragment"
+        android:name="dev.redfox.timepassdoggo.ui.recentDogs.fragment.RecentDogsFragment"
+        android:label="RecentDogsFragment" />
 </navigation>
